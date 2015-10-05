@@ -30,6 +30,15 @@ var question1 = new Question({
 
 })
 
+response1 = new Response({
+  responseText: "This is a response"
+})
+
+response1.save(function(err, response) {
+  if (err) console.log(err)
+    console.log('response1 Saved');
+})
+
 question1.responses.push({
   responseText: 'Yes'
 })
@@ -38,7 +47,7 @@ question1.responses.push({
   responseText: 'No'
 })
 
-question1.save(function(err, airport) {
+question1.save(function(err, question) {
   if (err) console.log(err)
     console.log('question1 Saved');
 })

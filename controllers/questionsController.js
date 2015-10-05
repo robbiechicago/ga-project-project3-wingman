@@ -1,4 +1,5 @@
 var Question = require('../models/question');
+var Response = require('../models/response');
 
 
 
@@ -27,11 +28,92 @@ function createQuestion(req, res) {
   });
 }
 
+// SHOW
+function getQuestion(req, res) {
+  var id = req.params.id;
+
+  Question.findById({_id: id}, function(error, question) {
+    if(error) res.json({message: 'Could not find question b/c:' + error});
+
+    res.json({question: question});
+  });
+}
+
+// UPDATE
+function updateQuestion(req, res) {
+  var id = req.params.id;
+
+    Question.findById({_id: id}, function(error, question) {
+    if(error) res.json({message: 'Could not find question b/c:' + error});
+
+    if(req.body.questionText) question.questionText = req.body.questionText;
+
+    question.save(function(error) {
+      if(error) res.json({messsage: 'Could not update question b/c:' + error});
+      console.log(question)
+      res.json({message: 'Question successfully updated'});
+    });
+  });
+}
+
+// DELETE
+function removeQuestion(req, res) {
+  var id = req.params.id;
+
+  Question.remove({_id: id}, function(error) {
+    if(error) res.json({message: 'Could not delete question b/c:' + error});
+
+    res.json({message: 'Question successfully deleted'});
+  });
+}
+
+//ADD RESPONSE TO QUESTION
+
+function addResponse(req, res) {
+  var id = req.params.id;
+  var responseId = req.params.response_id;
+
+
+  // var question = Question.findById(id, function(err, question) {
+  //   if(err) console.log(err)
+  //   console.log(question)
+  // })
+Question.findById(id, function(err, question){
+  var response = Response.findById(responseId) 
+    if (err) console.log(err)
+    question.responses.push({
+    responseText: 'hard coded response'
+  })
+    
+
+   question.save(function(error) {
+    if(error) res.json({messsage: 'Could not update question b/c:' + error});
+    console.log(question)
+    res.json(question);
+  });
+})
+
+  //   Question.findById({_id: id}, function(error, question) {
+  //   if(error) res.json({message: 'Could not find question b/c:' + error});
+
+
+  //   question.save(function(error) {
+  //     if(error) res.json({messsage: 'Could not update question b/c:' + error});
+  //     console.log(question)
+  //     res.json({message: 'Question successfully updated'});
+  //   });
+  // });
+}
+
+
+
+
 
 module.exports = {
   getAll: getAll,
-  createQuestion: createQuestion
-  // getQuote: getQuote,
-  // updateQuote: updateQuote,
-  // removeQuote: removeQuote
+  createQuestion: createQuestion,
+  getQuestion: getQuestion,
+  updateQuestion: updateQuestion,
+  removeQuestion: removeQuestion,
+  addResponse: addResponse
 }
