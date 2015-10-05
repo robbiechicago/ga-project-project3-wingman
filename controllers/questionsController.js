@@ -78,21 +78,19 @@ function addResponse(req, res) {
   //   if(err) console.log(err)
   //   console.log(question)
   // })
-Question.findById(id, function(err, question){
-  var response = Response.findById(responseId) 
-    if (err) console.log(err)
-    question.responses.push({
-    responseText: 'hard coded response'
-  })
-    
-
-   question.save(function(error) {
-    if(error) res.json({messsage: 'Could not update question b/c:' + error});
-    console.log(question)
+  var question1 = Question.findById(id, function(err, question){
+    Response.findById(responseId, function(err, response){
+      var text = response.responseText
+      console.log(text)
+      question.responses.push({
+      responseText: text
+      }) 
+    question.save(function(error) {
+      if(error) res.json({messsage: 'Could not update question b/c:' + error});
+    });
     res.json(question);
-  });
-})
-
+    })
+  })
   //   Question.findById({_id: id}, function(error, question) {
   //   if(error) res.json({message: 'Could not find question b/c:' + error});
 

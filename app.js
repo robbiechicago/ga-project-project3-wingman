@@ -39,6 +39,15 @@ response1.save(function(err, response) {
     console.log('response1 Saved');
 })
 
+response2 = new Response({
+  responseText: "Happy Response"
+})
+
+response2.save(function(err, response) {
+  if (err) console.log(err)
+    console.log('response1 Saved');
+})
+
 question1.responses.push({
   responseText: 'Yes'
 })
