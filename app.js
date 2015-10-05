@@ -5,6 +5,7 @@ var app         = express()
 var server      = require('http').createServer(app)
 var port        = process.env.PORT || 3000
 var morgan      = require('morgan')
+var bodyParser = require('body-parser');
 
 mongoose.connect('mongodb://localhost/wingman')
 
@@ -29,11 +30,11 @@ var question1 = new Question({
 
 })
 
-question1.resonses.push({
+question1.responses.push({
   responseText: 'Yes'
 })
 
-question1.resonses.push({
+question1.responses.push({
   responseText: 'No'
 })
 
@@ -52,13 +53,16 @@ app.set('views', './views')
 //loggin middlware (all requests)
 app.use(morgan('dev'))
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
 // serve static assets (js, css, image) from the public foldr
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', function(req, res){
-  res.render('index')
-})
-
+//require routes
+var routes = require('./config/routes');
+app.use(routes);
 
 
 //start server and listen on defined port 
