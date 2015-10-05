@@ -1,9 +1,48 @@
 //set up application 
+var mongoose    = require('mongoose')
 var express     = require('express')
 var app         = express()
 var server      = require('http').createServer(app)
 var port        = process.env.PORT || 3000
 var morgan      = require('morgan')
+
+mongoose.connect('mongodb://localhost/wingman')
+
+var Response = require('./models/response')
+var User = require('./models/user')
+var Question = require('./models/question')
+
+var user1 = new User({
+  name: 'Niall Wallace',
+  username: 'CrocoNiall',
+  password: 'Password12',
+  langCode: 'en'
+})
+
+user1.save(function(err, airport) {
+  if (err) console.log(err)
+    console.log('user1 Saved');
+})
+
+var question1 = new Question({
+  questionText: 'Are you happy?'
+
+})
+
+question1.resonses.push({
+  responseText: 'Yes'
+})
+
+question1.resonses.push({
+  responseText: 'No'
+})
+
+question1.save(function(err, airport) {
+  if (err) console.log(err)
+    console.log('question1 Saved');
+})
+
+
 
 
 //set view engine and define view directory 
