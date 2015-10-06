@@ -5,8 +5,15 @@ var app         = express()
 var server      = require('http').createServer(app)
 var port        = process.env.PORT || 3000
 var morgan      = require('morgan')
+var passport     = require('passport');
+var flash        = require('connect-flash');
 
 mongoose.connect('mongodb://localhost/wingman')
+
+app.use(passport.initialize());
+app.use(passport.session()); 
+app.use(flash()); 
+require('./config/passport')(passport);
 
 var Response = require('./models/response')
 var User = require('./models/user')
@@ -14,7 +21,7 @@ var Question = require('./models/question')
 
 var user1 = new User({
   name: 'Niall Wallace',
-  username: 'CrocoNiall',
+  username: ' ',
   password: 'Password12',
   langCode: 'en'
 })
@@ -61,6 +68,10 @@ app.get('/', function(req, res){
 
 app.get('/login', function(req, res){
   res.render('login')
+})
+
+app.get('/secretroom', function(req, res){
+  res.render('secretroom')
 })
 
 //start server and listen on defined port 
