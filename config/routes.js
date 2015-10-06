@@ -5,6 +5,7 @@ var methodOverride = require('method-override'); //used to manipulate POST
 
 var questionsController = require('../controllers/questionsController');
 var responsesController = require('../controllers/responsesController');
+var staticController = require('../controllers/staticController');
 
 // QUESTION API
 
@@ -34,6 +35,19 @@ router.route('/responses/:id')
 
 
 
+
+//STATIC ROUTES
+router.route('/')
+  .get(staticController.login)
+
+router.route('/authfail')
+  .get(staticController.authFail)
+
+router.route('/register')
+  .get(staticController.registerUser)
+
+router.route('/authsuccess')
+  .get(staticController.authSuccess)
 
 
 

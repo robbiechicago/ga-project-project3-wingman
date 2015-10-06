@@ -5,9 +5,10 @@ var app         = express()
 var server      = require('http').createServer(app)
 var port        = process.env.PORT || 3000
 var morgan      = require('morgan')
-var passport     = require('passport');
-var flash        = require('connect-flash');
-var bodyParser = require('body-parser');
+var passport    = require('passport');
+var flash       = require('connect-flash');
+var bodyParser  = require('body-parser');
+var ejsLayouts  = require('express-ejs-layouts')
 
 mongoose.connect('mongodb://localhost/wingman')
 
@@ -73,6 +74,7 @@ question1.save(function(err, question) {
 
 //set view engine and define view directory 
 app.set('view engine', 'ejs')
+app.use(ejsLayouts)
 app.set('views', './views')
 
 //loggin middlware (all requests)
