@@ -1,0 +1,20 @@
+body {
+  background: black;
+}
+
+#masterContainer{
+  display: block;
+  width: 350px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: white;
+  border: solid black 5px;
+  border-radius: 15px;
+}
+
+
+ @media screen and (max-device-width: 480px) and (orientation: portrait){
+ width: 350px;
+ height: 600px;
+ }
