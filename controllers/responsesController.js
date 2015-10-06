@@ -1,8 +1,6 @@
 var Response = require('../models/response');
 
 
-
-
 // INDEX
 function getAll(req, res) {
   Response.find(function(error, responses) {

@@ -10,10 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.3.4",
+    "ejs-layouts": "0.0.1",
     "express": "^4.13.3",
+    "express-ejs-layouts": "^1.1.0",
     "method-override": "^2.3.5",
     "mongoose": "^4.1.9",
-    "morgan": "^1.6.1"
+    "morgan": "^1.6.1",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0"
   }
 }
