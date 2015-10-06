@@ -21,11 +21,9 @@ module.exports = function(passport) {
     passwordField : 'password',
     passReqToCallback : true
   }, function(req, username, password, done) {
-    //  process.nextTick() actually does is defer the execution of an action till the next pass around the event loop.
-    // http://howtonode.org/understanding-process-next-tick 
+    console.log(username, password)
     process.nextTick(function() {
 
-      // Find a user with this e-mail
       User.findOne({ 'local.username' :  username }, function(err, user) {
         if (err) return done(err);
 
@@ -37,9 +35,10 @@ module.exports = function(passport) {
 
           // Create a new user
           var newUser            = new User();
+          
           newUser.local.username = username;
-          newUser.local.password = newUser.encrypt(password);
-
+          newUser.local.password = newUser.encrypt(password); 
+          console.log('RoHo says: ' + newUser);
           newUser.save(function(err) {
             if (err) throw err;
             return done(null, newUser);
@@ -57,14 +56,11 @@ module.exports = function(passport) {
 
     // Search for a user with an email from the login form
     User.findOne({ 'local.username' : username }, function(err, user) {
-      // If an exception occurred while verifying the credentials (for example, if the database is not available), done should be invoked with an error, in conventional Node style.
+
       if (err) { return done(err) };
 
       // If no user has been found
       if (!user) {
-        // Strategies require what is known as a verify callback.
-        // If the credentials are not valid (for example, if the password is incorrect), 
-        // done should be invoked with false instead of a user to indicate an authentication failure.
         return done(null, false, req.flash('loginMessage', 'Incorrect username.'))
       };
 
@@ -72,8 +68,9 @@ module.exports = function(passport) {
       if (!user.validPassword(password)) {
         return done(null, false, req.flash('loginMessage', 'Incorrect password.'));
       } 
-        
+         
       // User has been authenticated, return user
+      console.log('login proceedure passed.')
       return done(null, user);
     });
   }));
