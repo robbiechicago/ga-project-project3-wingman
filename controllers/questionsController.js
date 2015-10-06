@@ -1,9 +1,6 @@
 var Question = require('../models/question');
 var Response = require('../models/response');
 
-
-
-
 // INDEX
 function getAll(req, res) {
   Question.find(function(error, questions) {
@@ -73,11 +70,6 @@ function addResponse(req, res) {
   var id = req.params.id;
   var responseId = req.params.response_id;
 
-
-  // var question = Question.findById(id, function(err, question) {
-  //   if(err) console.log(err)
-  //   console.log(question)
-  // })
   var question1 = Question.findById(id, function(err, question){
     Response.findById(responseId, function(err, response){
       var text = response.responseText
@@ -85,28 +77,19 @@ function addResponse(req, res) {
       question.responses.push({
       responseText: text
       }) 
+
     question.save(function(error) {
       if(error) res.json({messsage: 'Could not update question b/c:' + error});
     });
     res.json(question);
     })
   })
-  //   Question.findById({_id: id}, function(error, question) {
-  //   if(error) res.json({message: 'Could not find question b/c:' + error});
-
-
-  //   question.save(function(error) {
-  //     if(error) res.json({messsage: 'Could not update question b/c:' + error});
-  //     console.log(question)
-  //     res.json({message: 'Question successfully updated'});
-  //   });
-  // });
 }
 
 
 
 
-
+// EXPORT MODULES
 module.exports = {
   getAll: getAll,
   createQuestion: createQuestion,
