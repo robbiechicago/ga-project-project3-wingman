@@ -7,6 +7,7 @@ var port        = process.env.PORT || 3000
 var morgan      = require('morgan')
 var passport     = require('passport');
 var flash        = require('connect-flash');
+var bodyParser = require('body-parser');
 
 mongoose.connect('mongodb://localhost/wingman')
 
@@ -36,15 +37,33 @@ var question1 = new Question({
 
 })
 
-question1.resonses.push({
+response1 = new Response({
+  responseText: "This is a response"
+})
+
+response1.save(function(err, response) {
+  if (err) console.log(err)
+    console.log('response1 Saved');
+})
+
+response2 = new Response({
+  responseText: "Happy Response"
+})
+
+response2.save(function(err, response) {
+  if (err) console.log(err)
+    console.log('response1 Saved');
+})
+
+question1.responses.push({
   responseText: 'Yes'
 })
 
-question1.resonses.push({
+question1.responses.push({
   responseText: 'No'
 })
 
-question1.save(function(err, airport) {
+question1.save(function(err, question) {
   if (err) console.log(err)
     console.log('question1 Saved');
 })
@@ -59,20 +78,28 @@ app.set('views', './views')
 //loggin middlware (all requests)
 app.use(morgan('dev'))
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
 // serve static assets (js, css, image) from the public foldr
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', function(req, res){
-  res.render('index')
-})
+// app.get('/', function(req, res){
+//   res.render('index')
+// })
 
-app.get('/login', function(req, res){
-  res.render('login')
-})
+// app.get('/login', function(req, res){
+//   res.render('login')
+// })
 
-app.get('/secretroom', function(req, res){
-  res.render('secretroom')
-})
+//require routes
+var routes = require('./config/routes');
+app.use(routes);
+
+// app.get('/secretroom', function(req, res){
+//   res.render('secretroom')
+// })
 
 //start server and listen on defined port 
 server.listen(port, function(){
