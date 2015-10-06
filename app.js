@@ -14,6 +14,7 @@ var session = require('express-session')
 
 mongoose.connect('mongodb://localhost/wingman')
 
+app.use(session({secret: "wingman-session"}));
 app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash()); 
@@ -30,10 +31,11 @@ var User = require('./models/user')
 var Question = require('./models/question')
 
 var user1 = new User({
-  name: 'Niall Wallace',
-  username: ' ',
-  password: 'Password12',
-  langCode: 'en'
+  local:
+  {
+    username: 'rob',
+    password: '$2a$08$boSocKqoq02aPgUyBnvpkOxcwC2z.UNfikT7NDAkt7EHosh9xsHi2'
+  }
 })
 
 user1.save(function(err, airport) {

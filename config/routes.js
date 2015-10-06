@@ -10,9 +10,11 @@ var staticController = require('../controllers/staticController');
 
 function authenticatedUser(req, res, next) {
   if (req.isAuthenticated()) return next();
-  console.log('a');
+  // console.log(req.isAuthenticated())
+  // if (req.isAuthenticated()) {
+  //   console.log('boom');  
+  // };
   res.redirect('/');
-  console.log('b');
 }
 
 // QUESTION API
