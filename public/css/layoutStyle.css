@@ -1,5 +1,55 @@
+button, .button, input[type=submit] {
+  border: 0;
+  background: white;
+  color: #007BA7;
+  padding: 8px 14px;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: none;
+  display: inline-block; /* needed for anchors */
+    box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+              2px 1px #3a587f, 1px 2px #4171ae,
+              3px 2px #3a587f, 2px 3px #4171ae,
+              4px 3px #3a587f, 3px 4px #4171ae,
+              5px 4px #3a587f, 4px 5px #4171ae,
+              6px 5px #3a587f, 5px 6px #4171ae;
+}
+
+  .submit-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+              2px 1px #3a587f, 1px 2px #4171ae,
+              3px 2px #3a587f, 2px 3px #4171ae,
+              4px 3px #3a587f, 3px 4px #4171ae;
+  }
+  .submit-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+              2px 1px #3a587f, 1px 2px #4171ae;
+  }
+
+.button-div {
+  text-align: center;
+  margin-top: 3%;
+}
+
+input {
+  -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+border: solid white;
+}
+
 body {
   background: black;
+}
+
+.signup-link {
+  margin: 10% 0 0 0;
+  text-decoration: none;
+  font-size: 80%;
+  color: #B0E0E6;
 }
 
 #masterContainer{
@@ -8,11 +58,43 @@ body {
   height: 600px;
   margin: 0 auto;
   padding: 10px;
-  background: white;
+  background: #007BA7;
   border: solid black 5px;
   border-radius: 15px;
+  color: white;
+  font-family: 'Varela Round', sans-serif;
 }
 
+#glasses{
+  max-width: 80%;
+  margin: 40% 10% -10% 10%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 330%;
+}
+
+.form-group {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#username {
+  width: 100%;
+  margin: 0 0 10% 0;
+}
+
+#password {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.labels {
+  margin: 0 auto;
+  width: 100%;
+}
 
  @media screen and (max-device-width: 480px) and (orientation: portrait){
  width: 350px;
