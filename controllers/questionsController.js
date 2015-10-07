@@ -106,5 +106,6 @@ module.exports = {
   getQuestion: getQuestion,
   updateQuestion: updateQuestion,
   removeQuestion: removeQuestion,
-  addResponse: addResponse
+  addResponse: addResponse,
+  getQuestionByType: getQuestionByType
 }
