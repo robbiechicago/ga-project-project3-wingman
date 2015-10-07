@@ -24,13 +24,13 @@ $(document).ready(function() {
       method: "get"
     })
     .done(function(response) {
-      console.log(response);
+
       $.each(response.question, function(index, compliment) {
         appendCompliment(index, compliment);
       })
     })
-    .fail(function(response) {
-      console.log(response);
+    .fail(function(err) {
+      console.log(err);
     })
   }
 

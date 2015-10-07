@@ -18,6 +18,7 @@ var User = mongoose.Schema({
   local : {
     username     : String,
     password     : String,
+    activity     : []
   }
 });
 

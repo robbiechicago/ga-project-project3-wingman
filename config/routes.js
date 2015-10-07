@@ -62,6 +62,9 @@ router.route('/home')
 router.route('/compliment')
   .get(staticController.renderCompliment)
 
+router.route('/smoke')
+  .get(staticController.renderSmoke)
+
 
  //AUTHENTICATION ROUTES 
 
@@ -82,7 +85,9 @@ router.route('/authsuccess')
   .get(authenticatedUser, staticController.authSuccess)
 
 
-
+//ACTIVITY ROUTE
+router.route('/activity/post')
+  .post(staticController.postActivity)
 
 
 
