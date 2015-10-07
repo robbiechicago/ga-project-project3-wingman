@@ -43,35 +43,18 @@ user1.save(function(err, airport) {
     console.log('user1 Saved');
 })
 
+// QUESTION 1
 var question1 = new Question({
-  questionText: 'Are you happy?'
-
-})
-
-response1 = new Response({
-  responseText: "This is a response"
-})
-
-response1.save(function(err, response) {
-  if (err) console.log(err)
-    console.log('response1 Saved');
-})
-
-response2 = new Response({
-  responseText: "Happy Response"
-})
-
-response2.save(function(err, response) {
-  if (err) console.log(err)
-    console.log('response1 Saved');
+  questionName: 'compliment',
+  questionText: 'You are very...'
 })
 
 question1.responses.push({
-  responseText: 'Yes'
+  responseText: 'Thank you'
 })
 
 question1.responses.push({
-  responseText: 'No'
+  responseText: 'I\'m not interested, go away'
 })
 
 question1.save(function(err, question) {
@@ -79,7 +62,24 @@ question1.save(function(err, question) {
     console.log('question1 Saved');
 })
 
+// QUESTION 2
+var question2 = new Question({
+  questionName: 'compliment',
+  questionText: 'I like your...'
+})
 
+question2.responses.push({
+  responseText: 'Thank you'
+})
+
+question2.responses.push({
+  responseText: 'Fuck off'
+})
+
+question2.save(function(err, question) {
+  if (err) console.log(err)
+    console.log('question2 Saved');
+})
 
 
 //set view engine and define view directory 
