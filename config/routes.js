@@ -28,6 +28,9 @@ router.route('/questions/:id')
   .put(questionsController.updateQuestion)
   .delete(questionsController.removeQuestion);
 
+router.route('/questions/type/:questionName')
+  .get(questionsController.getQuestionByType)
+
   //ADD RESPONSE TO QUESTION
 router.route('/questions/:id/responses/:response_id')
   .put(questionsController.addResponse)
