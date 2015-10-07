@@ -81,6 +81,25 @@ question2.save(function(err, question) {
     console.log('question2 Saved');
 })
 
+// QUESTION 3
+var question3 = new Question({
+  questionName: 'drink',
+  questionText: 'would you like a drink?'
+})
+
+question3.responses.push({
+  responseText: 'yes please'
+})
+
+question3.responses.push({
+  responseText: 'not from you, you weirdo'
+})
+
+question3.save(function(err, question) {
+  if (err) console.log(err)
+    console.log('question3 Saved');
+})
+
 
 //set view engine and define view directory 
 app.set('view engine', 'ejs')
