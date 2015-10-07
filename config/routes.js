@@ -60,7 +60,7 @@ router.route('/home')
   .get(authenticatedUser, staticController.renderHome)
 
 router.route('/compliment')
-  .get(authenticatedUser, staticController.renderCompliment)
+  .get(staticController.renderCompliment)
 
 
  //AUTHENTICATION ROUTES 
