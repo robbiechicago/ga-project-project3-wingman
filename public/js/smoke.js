@@ -30,7 +30,7 @@ $(document).ready(function() {
 function appendCompliment(question) {
   console.log('append question section')
  
-  $('ul#questions').append('<li>' + question.questionText + '</li>');
+  $('#questions').append('<h1>' + question.questionText + '</h1>');
 
 };
 

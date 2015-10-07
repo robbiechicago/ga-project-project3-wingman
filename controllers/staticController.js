@@ -1,4 +1,7 @@
 var passport = require("passport")
+var mongoose = require('mongoose')
+var User         = mongoose.model('User');
+
 
 // INDEX
 function login(req, res) {
@@ -20,7 +23,7 @@ function registerUserPage(req, res) {
 function registerUser(req, res) {
   console.log('Hello!')
   passport.authenticate('local-signup', {
-    successRedirect : '/authsuccess', // redirect to the secure profile section
+    successRedirect : '/go', // redirect to the secure profile section
     failureRedirect : '/register', // redirect back to the signup page if there is an error
     failureFlash : true
   })(req, res);
@@ -37,7 +40,7 @@ function postLogin(req, res) {
 
 //AUTH SUCCESS
 function authSuccess(req, res) {
-    res.render('app.ejs');
+    res.render('go.ejs');
 }
 
 // GET /logout
@@ -69,12 +72,14 @@ function renderSmoke(req, res) {
 
 //POST AVTICITY 
 function postActivity(req, res){
+  console.log(req.user)
+  User.findById({username: req.local.username}, function(error, user) {
+  user.activity.push(req.body)
+  if(error) res.json({message: 'Could not find response b/c:' + error});
   
+  });
+
   console.log(req.body)
-  // question3.responses.push({
-  //   question: req.body.question,
-  //   response: req.body.response
-  // })
 }
 
 module.exports = {
