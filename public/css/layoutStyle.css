@@ -29,6 +29,10 @@ button, .button, input[type=submit] {
               2px 1px #eaf7f8, 1px 2px #B0E0E6;
   }
 
+  input.form-control:focus {
+    outline-width: 0;
+}
+
 .button-div {
   text-align: center;
   margin-top: 3%;
@@ -70,6 +74,11 @@ body {
   margin: 40% 10% -10% 10%;
 }
 
+#glasses-small{
+  max-width: 40%;
+  margin: 20% 30% -10% 30%;
+}
+
 h1 {
   text-align: center;
   font-size: 330%;
@@ -96,7 +105,23 @@ h1 {
   width: 100%;
 }
 
+
  @media screen and (max-device-width: 480px) and (orientation: portrait){
  width: 350px;
  height: 600px;
  }
+
+ .circle {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+  
+  animation-name: spin; 
+  animation-duration: 3s; /* 3 seconds */
+  animation-iteration-count: infinite; 
+  animation-timing-function: linear;
+}
