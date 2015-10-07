@@ -117,6 +117,11 @@ body {
   margin: 20% 30% -5% 30%;
 }
 
+#glasses-xsmall{
+  max-width: 20%;
+  margin: 0 auto;
+}
+
 h1 {
   text-align: center;
   font-size: 300%;
@@ -125,6 +130,16 @@ h1 {
 h2 {
   text-align: center;
   font-size: 200%;
+}
+
+.footer {
+  text-align: center;
+  font-size: 100%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 20%;
+  opacity: 0.3;
 }
 
 .form-group {
@@ -146,22 +161,100 @@ h2 {
   width: 100%;
 }
 
-@-webkit-keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
- .circle {
+ .go-circle {
+  margin: 0 auto;
   border-radius: 50%;
   width: 200px;
   height: 200px;
+  display: absolute;
+  color: white;
+  font-size: 700%;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 190%;
+  margin-bottom: 5%;
+  border: 10px solid white;
+  -webkit-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
+  box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   
-  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
-  background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
-  background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #00ff00 0%, #00b200 100%, #006600 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, #00ff00, #00b200);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, #00ff00 0%, #00b200 100%, #006600 95%);
+}
+
+ .stop-circle {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: absolute;
+  color: white;
+  font-size: 250%;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 400%;
+  margin-bottom: 5%;
+  border: 5px solid white;
+  -webkit-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
+  box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   
-  animation-name: spin; 
-  animation-duration: 3s; /* 3 seconds */
-  animation-iteration-count: infinite; 
-  animation-timing-function: linear;
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ff6666 0%, #e50000 100%, #7f0000 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, #e50000, #7f0000);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, #ff6666 0%, #e50000 100%, #7f0000 95%);
+}
+
+.icon-row {
+  margin: 0 auto;
+  display: block;
+  height: 120px;
+  width: 100%;
+  padding: 2%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon {
+  width: 46%;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.line {
+  height: 3px;
+  width: 70%;
+  background: white;
+  margin: 0 auto;
+  top: 10%;
+  opacity: 0.5;
+}
+
+#drink {
+  background-image: url("/images/drink.png");
+  background-size: 37%;
+}
+
+#smoke {
+  background-image: url("/images/smoke.png");
+  background-size: 45%;
+}
+
+#selfie {
+  background-image: url("/images/selfie.png");
+  background-size: 70%;
+}
+
+#compliment {
+  background-image: url("/images/compliment.png");
+  background-size: 65%;
+}
+
+#bye {
+  background-image: url("/images/runaway.png");
+  background-size: 35%;
+  opacity: 0.5;
 }
