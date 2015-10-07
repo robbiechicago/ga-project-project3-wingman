@@ -62,6 +62,9 @@ router.route('/home')
 router.route('/compliment')
   .get(staticController.renderCompliment)
 
+router.route('/smoke')
+  .get(staticController.renderSmoke)
+
 
  //AUTHENTICATION ROUTES 
 

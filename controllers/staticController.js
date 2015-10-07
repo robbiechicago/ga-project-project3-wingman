@@ -61,6 +61,11 @@ function renderCompliment(req, res) {
   res.render('compliment.ejs');
 }
 
+//RENDER COMPLIMENT PAGE 
+function renderSmoke(req, res) {
+  res.render('smoke.ejs');
+}
+
 
 
 
@@ -74,5 +79,6 @@ module.exports = {
   getLogout: getLogout,
   go: go,
   renderHome: renderHome,
-  renderCompliment: renderCompliment
+  renderCompliment: renderCompliment,
+  renderSmoke: renderSmoke
 }

@@ -99,6 +99,24 @@ question3.save(function(err, question) {
   if (err) console.log(err)
     console.log('question3 Saved');
 })
+// QUESTION 4 SMOKE
+var question4 = new Question({
+  questionName: 'smoke',
+  questionText: 'Would you like to go for a Cigarette?'
+})
+
+question4.responses.push({
+  responseText: 'Yes Please'
+})
+
+question4.responses.push({
+  responseText: 'No Thanks'
+})
+
+question4.save(function(err, question) {
+  if (err) console.log(err)
+    console.log('question3 Saved');
+})
 
 
 //set view engine and define view directory 
