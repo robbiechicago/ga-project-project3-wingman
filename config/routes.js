@@ -85,7 +85,9 @@ router.route('/authsuccess')
   .get(authenticatedUser, staticController.authSuccess)
 
 
-
+//ACTIVITY ROUTE
+router.route('/activity/post')
+  .post(staticController.postActivity)
 
 
 

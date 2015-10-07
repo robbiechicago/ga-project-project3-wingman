@@ -1,5 +1,6 @@
 console.log('Hello Niall')
 $(document).ready(function() {
+  
   getQuestions();
 
 });
@@ -15,7 +16,6 @@ $(document).ready(function() {
     .done(function(response) {
       var res1 = response
       console.log(response)
-
 
       $.each(response.question, function(index, question) {
         appendCompliment(question);
@@ -34,10 +34,19 @@ function appendCompliment(question) {
 
 };
 
-
 function appendResponses(question){
   $.each(question.responses, function(index, response){
 
   $('ul#responses').append('<li>' + response.responseText + '</li>');
-})
+  })
 }
+
+
+
+
+
+
+
+
+
+

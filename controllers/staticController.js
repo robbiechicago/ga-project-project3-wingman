@@ -67,7 +67,15 @@ function renderSmoke(req, res) {
 }
 
 
-
+//POST AVTICITY 
+function postActivity(req, res){
+  
+  console.log(req.body)
+  // question3.responses.push({
+  //   question: req.body.question,
+  //   response: req.body.response
+  // })
+}
 
 module.exports = {
   login: login,
@@ -80,5 +88,6 @@ module.exports = {
   go: go,
   renderHome: renderHome,
   renderCompliment: renderCompliment,
-  renderSmoke: renderSmoke
+  renderSmoke: renderSmoke,
+  postActivity: postActivity
 }
