@@ -5,27 +5,37 @@ var app         = express()
 var server      = require('http').createServer(app)
 var port        = process.env.PORT || 3000
 var morgan      = require('morgan')
+var cookieParser = require('cookie-parser')
 var passport    = require('passport');
 var flash       = require('connect-flash');
 var bodyParser  = require('body-parser');
 var ejsLayouts  = require('express-ejs-layouts')
+var session = require('express-session')
 
 mongoose.connect('mongodb://localhost/wingman')
 
+app.use(session({secret: "wingman-session"}));
 app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash()); 
 require('./config/passport')(passport);
+app.use(cookieParser())
+
+app.use(function(req, res, next) {
+  global.user = req.user;
+  next();
+})
 
 var Response = require('./models/response')
 var User = require('./models/user')
 var Question = require('./models/question')
 
 var user1 = new User({
-  name: 'Niall Wallace',
-  username: ' ',
-  password: 'Password12',
-  langCode: 'en'
+  local:
+  {
+    username: 'rob',
+    password: '$2a$08$boSocKqoq02aPgUyBnvpkOxcwC2z.UNfikT7NDAkt7EHosh9xsHi2'
+  }
 })
 
 user1.save(function(err, airport) {

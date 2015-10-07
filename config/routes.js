@@ -2,10 +2,20 @@ var express = require('express');
 var router = express.Router()
 var bodyParser = require('body-parser'); //parses information from POST
 var methodOverride = require('method-override'); //used to manipulate POST
+var passport = require('passport');
 
 var questionsController = require('../controllers/questionsController');
 var responsesController = require('../controllers/responsesController');
 var staticController = require('../controllers/staticController');
+
+function authenticatedUser(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  // console.log(req.isAuthenticated())
+  // if (req.isAuthenticated()) {
+  //   console.log('boom');  
+  // };
+  res.redirect('/');
+}
 
 // QUESTION API
 
@@ -40,14 +50,21 @@ router.route('/responses/:id')
 router.route('/')
   .get(staticController.login)
 
+router.route('/login')
+  .post(staticController.postLogin)
+
+router.route("/logout")
+  .get(staticController.getLogout)
+
 router.route('/authfail')
   .get(staticController.authFail)
 
 router.route('/register')
-  .get(staticController.registerUser)
+  .get(staticController.registerUserPage)
+  .post(staticController.registerUser)
 
 router.route('/authsuccess')
-  .get(staticController.authSuccess)
+  .get(authenticatedUser, staticController.authSuccess)
 
 
 
