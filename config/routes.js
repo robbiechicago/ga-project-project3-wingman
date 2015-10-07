@@ -50,6 +50,18 @@ router.route('/responses/:id')
 router.route('/')
   .get(staticController.login)
 
+router.route('/go')
+  .get(authenticatedUser, staticController.go)
+
+router.route('/home')
+  .get(authenticatedUser, staticController.renderHome)
+
+router.route('/compliment')
+  .get(authenticatedUser, staticController.renderCompliment)
+
+
+ //AUTHENTICATION ROUTES 
+
 router.route('/login')
   .post(staticController.postLogin)
 
@@ -65,6 +77,9 @@ router.route('/register')
 
 router.route('/authsuccess')
   .get(authenticatedUser, staticController.authSuccess)
+
+
+
 
 
 
