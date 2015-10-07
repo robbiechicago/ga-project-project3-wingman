@@ -9,6 +9,16 @@ function getAll(req, res) {
     res.json({question: questions});
   });
 }
+// GET COMPLMENT QUESTIONS
+function getQuestionByType(req, res) {
+  var qName = req.params.questionName;
+
+  Question.find({questionName: qName}, function(error, question) {
+    if(error) res.json({message: 'Could not find question b/c:' + error});
+
+    res.json({question: question});
+  });
+}
 
 
 // CREATE

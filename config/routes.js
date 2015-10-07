@@ -28,6 +28,9 @@ router.route('/questions/:id')
   .put(questionsController.updateQuestion)
   .delete(questionsController.removeQuestion);
 
+router.route('/questions/type/:questionName')
+  .get(questionsController.getQuestionByType)
+
   //ADD RESPONSE TO QUESTION
 router.route('/questions/:id/responses/:response_id')
   .put(questionsController.addResponse)
@@ -50,6 +53,18 @@ router.route('/responses/:id')
 router.route('/')
   .get(staticController.login)
 
+router.route('/go')
+  .get(authenticatedUser, staticController.go)
+
+router.route('/home')
+  .get(authenticatedUser, staticController.renderHome)
+
+router.route('/compliment')
+  .get(authenticatedUser, staticController.renderCompliment)
+
+
+ //AUTHENTICATION ROUTES 
+
 router.route('/login')
   .post(staticController.postLogin)
 
@@ -65,6 +80,9 @@ router.route('/register')
 
 router.route('/authsuccess')
   .get(authenticatedUser, staticController.authSuccess)
+
+
+
 
 
 

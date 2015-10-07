@@ -15,6 +15,8 @@ function registerUserPage(req, res) {
     res.render('registerUser.ejs');
 }
 
+
+//REGISTER USER
 function registerUser(req, res) {
   console.log('Hello!')
   passport.authenticate('local-signup', {
@@ -24,6 +26,7 @@ function registerUser(req, res) {
   })(req, res);
 }
 
+// POST LOGIN
 function postLogin(req, res) {
   passport.authenticate('local-login', {
     successRedirect : "/authsuccess",
@@ -43,6 +46,23 @@ function getLogout(req, res) {
   res.redirect("/");
 }
 
+//RENDER GO PAGE 
+function go(req, res) {
+  res.render('go.ejs');
+}
+
+//RENDER MENU PAGE 
+function renderHome(req, res) {
+  res.render('home.ejs');
+}
+
+//RENDER COMPLIMENT PAGE 
+function renderCompliment(req, res) {
+  res.render('compliment.ejs');
+}
+
+
+
 
 module.exports = {
   login: login,
@@ -51,5 +71,8 @@ module.exports = {
   postLogin: postLogin,
   authFail: authFail,
   authSuccess: authSuccess,
-  getLogout: getLogout
+  getLogout: getLogout,
+  go: go,
+  renderHome: renderHome,
+  renderCompliment: renderCompliment
 }
