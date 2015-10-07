@@ -2,9 +2,16 @@ console.log('Hello')
 
 $(document).ready(function() {
 
-  
-  console.log(endpoint)
   getQuestions();
+  $('body').on('click', '.complimentLi', function(e) {
+    var elem = $(this);
+    console.log(elem[0].dataset.index);
+    elem.removeClass("slideup");
+    $('.slideup').slideUp( "slow", function() {
+      // Animation complete.
+    });
+    showTextBox();
+  })
 
 });
   
@@ -17,23 +24,36 @@ $(document).ready(function() {
       method: "get"
     })
     .done(function(response) {
-            var res1 = response
-
-      console.log(response)
+      console.log(response);
       $.each(response.question, function(index, compliment) {
-        appendCompliment(compliment);
+        appendCompliment(index, compliment);
       })
     })
     .fail(function(response) {
-      console.log(response)
-    })
-    .always(function(response) {
-
-      console.log(response)
+      console.log(response);
     })
   }
 
-function appendCompliment(compliment) {
+function showTextBox() {
+  console.log('show text box section');
+  $(".hidden").fadeIn( "slow", function() {
+    // Animation complete
+  });
+}
+
+// function appendResponses (index, compliment) {
+//   console.log('append responses section')
+//   $('ul#questions').append('<li class="slideup complimentLi" data-index="' + index + '">' + compliment.questionText + '</li>');
+// }
+
+function appendCompliment(index, compliment) {
   console.log('append compliment section')
-  $('ul#questions').append('<li>' + compliment.questionText + '</li>');
+  $('ul#questions').append('<li class="slideup complimentLi" data-index="' + index + '">' + compliment.questionText + '</li>');
 };
+
+
+
+
+
+
+
