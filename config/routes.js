@@ -10,10 +10,6 @@ var staticController = require('../controllers/staticController');
 
 function authenticatedUser(req, res, next) {
   if (req.isAuthenticated()) return next();
-  // console.log(req.isAuthenticated())
-  // if (req.isAuthenticated()) {
-  //   console.log('boom');  
-  // };
   res.redirect('/');
 }
 
@@ -64,6 +60,12 @@ router.route('/compliment')
 
 router.route('/smoke')
   .get(staticController.renderSmoke)
+
+router.route('/drink')
+  .get(staticController.renderDrink)
+
+router.route('/drinkType')
+  .get(staticController.renderDrinkType)
 
 
  //AUTHENTICATION ROUTES 

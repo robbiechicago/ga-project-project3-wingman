@@ -99,6 +99,7 @@ question3.save(function(err, question) {
   if (err) console.log(err)
     console.log('question3 Saved');
 })
+
 // QUESTION 4 SMOKE
 var question4 = new Question({
   questionName: 'smoke',
@@ -115,8 +116,40 @@ question4.responses.push({
 
 question4.save(function(err, question) {
   if (err) console.log(err)
-    console.log('question3 Saved');
+    console.log('question4 Saved');
 })
+
+// QUESTION 5 DRINKTYPE
+var question5 = new Question({
+  questionName: 'drinkType',
+  questionText: 'Drink?'
+})
+
+question5.responses.push({
+  responseText: 'WINE'
+})
+question5.responses.push({
+  responseText: 'BEER'
+})
+question5.responses.push({
+  responseText: 'VODKA'
+})
+question5.responses.push({
+  responseText: 'GIN'
+})
+question5.responses.push({
+  responseText: 'COCKTAIL'
+})
+question5.responses.push({
+  responseText: 'SODA'
+})
+
+question5.save(function(err, question) {
+  if (err) console.log(err)
+    console.log('question4 Saved');
+})
+
+
 
 
 //set view engine and define view directory 
