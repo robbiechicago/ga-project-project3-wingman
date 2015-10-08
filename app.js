@@ -46,7 +46,7 @@ user1.save(function(err, airport) {
 // QUESTION 1
 var question1 = new Question({
   questionName: 'compliment',
-  questionText: 'You are very...'
+  questionText: 'YOU ARE VERY'
 })
 
 question1.responses.push({
@@ -65,7 +65,7 @@ question1.save(function(err, question) {
 // QUESTION 2
 var question2 = new Question({
   questionName: 'compliment',
-  questionText: 'I like your...'
+  questionText: 'I LIKE YOUR'
 })
 
 question2.responses.push({

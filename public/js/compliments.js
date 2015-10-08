@@ -105,7 +105,7 @@ function showTextBox() {
 
 function appendCompliment(index, compliment) {
   console.log('append compliment section')
-  $('ul#questions').append('<li class="slideup complimentLi" data-index="' + index + '">' + compliment.questionText + '</li>');
+  $('ul#questions').append('<button class="slideup complimentLi complimentButton" data-index="' + index + '">' + compliment.questionText + '</button>');
 
 };
 
