@@ -93,7 +93,6 @@ function translateText(value1, value2){
     });
 }
 
-
 var endpoint = '/questions/type/compliment'
 
 function getQuestions() {
@@ -113,7 +112,6 @@ function getQuestions() {
 }
 
 function appendTranlaslation(text){
-
   presontationWindow.html('')
   presontationWindow.append('<h1 id="response">'+ text +'</h1>')
 

@@ -32,7 +32,7 @@ function registerUser(req, res) {
 // POST LOGIN
 function postLogin(req, res) {
   passport.authenticate('local-login', {
-    successRedirect : "/authsuccess",
+    successRedirect : "/lang",
     failureRedirect : "/",
     failureFlash    : true
   })(req, res);
