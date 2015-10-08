@@ -4,7 +4,9 @@ $(document).ready(function() {
 
   $('body').on('click', '.responseLi', function(e) {
     var elem = $(this);
-    console.log($(this)[0].id)
+    console.log(elem[0].dataset.drinktype)
+    setLocalDataEvent(elem[0].dataset.drinktype)
+
   })
   
 });
@@ -19,7 +21,7 @@ $(document).ready(function() {
     })
     .done(function(response) {
       var res1 = response
-      console.log(response)
+
 
       $.each(response.question, function(index, question) {
         // appendCompliment(question);
@@ -30,14 +32,12 @@ $(document).ready(function() {
         translatedResponse.done(function(response) {
 
           translatedText = response.text[0]
-          console.log(translatedText)
           appendTranlaslation(translatedText)
           appendResponses(question)
     })
       })
     })
     .fail(function(response) {
-      console.log(response)
     })
   }
 
@@ -50,11 +50,8 @@ function appendTranlaslation(text){
 }
   
 function translateText(value1){
-  console.log(value1)
   var temp = (value1).split(' ')
-  console.log(temp)
   var newText = temp.join('+')
-  console.log('new Text = '+newText)
   if(JSON.parse(localStorage.getItem('wingman')).lang) {
     langCode = JSON.parse(localStorage.getItem('wingman')).lang
     console.log('language set to: ' +langCode)
@@ -93,11 +90,13 @@ function appendResponsesTranslated(text, index){
     $('ul#responses').append('<li class="responseLi" data-drinkType="' + text + '"id=' + index + '>' + text + '</li>');
 }
 
-function setLocalDataEvent(){
+function setLocalDataEvent(drink){
 
-  eventText = 'You bought' + wingman.name + 'a drink'
+  eventText = 'You bought ' + wingman.name + ' a ' + '"' + drink + '"'
+  console.log(eventText)
   wingman.activity.push(eventText) 
   localStorage.setItem('wingman', JSON.stringify(wingman))
+  debugger
 
 }
 

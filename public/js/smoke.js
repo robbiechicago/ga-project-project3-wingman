@@ -2,9 +2,18 @@ console.log('Hello Niall')
 $(document).ready(function() {
   
   getQuestions();
+  $('body').on('click', '#0' ,function(e) {
+    setLocalDataEvent();
+     location.href = "/home";
+  });
 
+  $('body').on('click', '#1' ,function(e) {
+    setLocalDataEvent();
+    location.href = "/home";
+  });
 });
-  
+
+  var wingman = JSON.parse(localStorage.getItem('wingman'))
   var endpoint = '/questions/type/smoke'
 
   function getQuestions() {
@@ -88,7 +97,15 @@ function appendResponsesTranslated(text, index){
     $('ul#responses').append('<li class="responseLi" id=' + index + '>' + text + '</li>');
 }
 
+function setLocalDataEvent(){
 
+  eventText = 'You went for a smoke with ' + wingman.name
+  console.log(eventText)
+  wingman.activity.push(eventText) 
+  localStorage.setItem('wingman', JSON.stringify(wingman))
+
+
+}
 
 
 

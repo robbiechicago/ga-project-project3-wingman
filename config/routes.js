@@ -42,8 +42,9 @@ router.route('/responses/:id')
   .put(responsesController.updateResponse)
   .delete(responsesController.removeResponse);
 
-
-
+  // USER API
+  router.route('/users/:id')
+    .get(usersController.getUser)
 
 //STATIC ROUTES
 router.route('/')
@@ -72,6 +73,9 @@ router.route('/drink')
 
 router.route('/drinkType')
   .get(staticController.renderDrinkType)
+
+router.route('/activity')
+  .get(staticController.renderActivity)
 
 
  //AUTHENTICATION ROUTES 

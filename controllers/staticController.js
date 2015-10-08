@@ -86,6 +86,10 @@ function renderDrink(req, res) {
 function renderDrinkType(req, res) {
   res.render('drinkType.ejs');
 }
+//RENDER DRINKTYPE PAGE 
+function renderActivity(req, res) {
+  res.render('activity.ejs');
+}
 
 
 //POST AVTICITY 
@@ -115,6 +119,7 @@ module.exports = {
   renderCompliment: renderCompliment,
   renderSmoke: renderSmoke,
   renderDrink: renderDrink,
+  renderActivity: renderActivity,
   renderDrinkType: renderDrinkType,
   postActivity: postActivity
 }
