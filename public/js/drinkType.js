@@ -45,7 +45,7 @@ $(document).ready(function() {
 function appendTranlaslation(text){
 
   $('#questions').html('')
-  $('#questions').append('<h1 id="response">'+ text +'</h1>')
+  // $('#questions').append('<h1 id="response">'+ text +'</h1>')
 
 }
   
@@ -90,6 +90,7 @@ function appendResponses(question){
 
 }
 function appendResponsesTranslated(text, index){
+
     $('ul#responses').append('<li class="responseLi" data-drinkType="' + text + '"id=' + index + '>' + text + '</li>');
 }
 
@@ -98,6 +99,7 @@ function setLocalDataEvent(){
   eventText = 'You bought' + wingman.name + 'a drink'
   wingman.activity.push(eventText) 
   localStorage.setItem('wingman', JSON.stringify(wingman))
+
 
 }
 

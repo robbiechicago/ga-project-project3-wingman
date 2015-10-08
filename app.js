@@ -88,11 +88,11 @@ var question3 = new Question({
 })
 
 question3.responses.push({
-  responseText: 'YES PLEASE'
+  responseText: 'YES!'
 })
 
 question3.responses.push({
-  responseText: 'NO THANK YOU'
+  responseText: 'NO THANKS'
 })
 
 question3.save(function(err, question) {
@@ -103,15 +103,15 @@ question3.save(function(err, question) {
 // QUESTION 4 SMOKE
 var question4 = new Question({
   questionName: 'smoke',
-  questionText: 'WOULD YOU LIKE A CIGARETTE?'
+  questionText: 'WANT A CIGARETTE?'
 })
 
 question4.responses.push({
-  responseText: 'Yes Please'
+  responseText: 'YES!'
 })
 
 question4.responses.push({
-  responseText: 'No Thanks'
+  responseText: 'NO THANKS'
 })
 
 question4.save(function(err, question) {
@@ -122,7 +122,7 @@ question4.save(function(err, question) {
 // QUESTION 5 DRINKTYPE
 var question5 = new Question({
   questionName: 'drinkType',
-  questionText: 'Drink?'
+  questionText: 'WHAT CAN I GET YOU?'
 })
 
 question5.responses.push({
