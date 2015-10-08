@@ -1,7 +1,19 @@
 console.log('Hello Niall')
+var wingman = JSON.parse(localStorage.getItem('wingman'))
+
 $(document).ready(function() {
   
   getQuestions();
+
+  $('body').on('click', '#0', function(e){
+    $('#smokeCont').slideUp()
+    $('#presontation').append('<h1>'+ wingman.name + ' SAID YES</h1>')
+    $('#presontation').slideDown()
+  })
+
+  $('body').on('click', '#1', function(e){
+    location.href = "/home";
+  })
 
 });
   
