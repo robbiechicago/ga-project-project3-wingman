@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 });
   
-  var endpoint = '/questions/type/smoke'
+  var endpoint = '/questions/type/drinkType'
 
   function getQuestions() {
     $.ajax({
@@ -54,7 +54,7 @@ function translateText(value1){
 
 
   return $.ajax({
-    url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20151005T100356Z.3c97f274db97659e.4f6d68f66d7e6855016e1fa832b97841210a0e43&lang=AR&text=' + newText
+    url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20151005T100356Z.3c97f274db97659e.4f6d68f66d7e6855016e1fa832b97841210a0e43&lang=FR&text=' + newText
     });
 }
 

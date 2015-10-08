@@ -1,11 +1,26 @@
 console.log('Hello Niall')
 $(document).ready(function() {
-  
+    $('body').on('click', '.responseLi', function(e) {
+    var elem = $(this);
+
+    console.log($(this)[0].id)
+    $('.slideup').slideUp( "slow", function() {
+      // Animation complete.
+    });
+
+  })
   getQuestions();
+
+  $('body').on('click', '#0', function(e) {
+    location.href = "/drinkType";
+  })
+  $('body').on('click', '#1', function(e) {
+    location.href = "/home";
+  })
 
 });
   
-  var endpoint = '/questions/type/smoke'
+  var endpoint = '/questions/type/drink'
 
   function getQuestions() {
     $.ajax({
@@ -41,7 +56,7 @@ $(document).ready(function() {
 function appendTranlaslation(text){
 
   $('#questions').html('')
-  $('#questions').append('<h1 id="response">'+ text +'</h1>')
+  $('#questions').append('<h1 class='+response+'id="response">'+ text +'</h1>')
 
 }
   
@@ -54,7 +69,7 @@ function translateText(value1){
 
 
   return $.ajax({
-    url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20151005T100356Z.3c97f274db97659e.4f6d68f66d7e6855016e1fa832b97841210a0e43&lang=AR&text=' + newText
+    url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20151005T100356Z.3c97f274db97659e.4f6d68f66d7e6855016e1fa832b97841210a0e43&lang=EN&text=' + newText
     });
 }
 

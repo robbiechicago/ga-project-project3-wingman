@@ -12,6 +12,9 @@ $(document).ready(function() {
   $('#bye').on('click', function(){
     location.href = "/go";
   })
+  $('#drink').on('click', function(){
+    location.href = "/drink";
+  })
 
 
 })

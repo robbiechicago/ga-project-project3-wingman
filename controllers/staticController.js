@@ -64,9 +64,17 @@ function renderCompliment(req, res) {
   res.render('compliment.ejs');
 }
 
-//RENDER COMPLIMENT PAGE 
+//RENDER SMOKE PAGE 
 function renderSmoke(req, res) {
   res.render('smoke.ejs');
+}
+//RENDER DRINK PAGE 
+function renderDrink(req, res) {
+  res.render('drink.ejs');
+}
+//RENDER DRINKTYPE PAGE 
+function renderDrinkType(req, res) {
+  res.render('drinkType.ejs');
 }
 
 
@@ -94,5 +102,7 @@ module.exports = {
   renderHome: renderHome,
   renderCompliment: renderCompliment,
   renderSmoke: renderSmoke,
+  renderDrink: renderDrink,
+  renderDrinkType: renderDrinkType,
   postActivity: postActivity
 }
