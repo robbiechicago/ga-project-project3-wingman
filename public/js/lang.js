@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 $('.icon').on('click', function(e){
   setLang($(this)[0].dataset.lang)
-  location.href = "/go";
+  location.href = "/getName";
 })
 
 //retrive local data, assign it to var

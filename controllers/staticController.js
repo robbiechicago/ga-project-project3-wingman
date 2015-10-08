@@ -32,7 +32,7 @@ function registerUser(req, res) {
 // POST LOGIN
 function postLogin(req, res) {
   passport.authenticate('local-login', {
-    successRedirect : "/lang",
+    successRedirect : "/go",
     failureRedirect : "/",
     failureFlash    : true
   })(req, res);
@@ -87,6 +87,11 @@ function renderDrinkType(req, res) {
   res.render('drinkType.ejs');
 }
 
+//RENDER CAMERA PAGE 
+function renderCamera(req, res) {
+  res.render('camera.ejs');
+}
+
 
 //POST AVTICITY 
 function postActivity(req, res){
@@ -112,6 +117,7 @@ module.exports = {
   getName: getName,
   lang: lang,
   renderHome: renderHome,
+  renderCamera: renderCamera,
   renderCompliment: renderCompliment,
   renderSmoke: renderSmoke,
   renderDrink: renderDrink,

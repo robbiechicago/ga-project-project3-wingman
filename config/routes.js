@@ -72,6 +72,8 @@ router.route('/drink')
 
 router.route('/drinkType')
   .get(staticController.renderDrinkType)
+router.route('/selfie')
+  .get(staticController.renderCamera)
 
 
  //AUTHENTICATION ROUTES 
