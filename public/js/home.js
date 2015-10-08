@@ -17,5 +17,9 @@ $(document).ready(function() {
     location.href = "/drink";
   })
 
+  $('#selfie').on('click', function(){
+    location.href = "/selfie";
+  })
+
 
 })

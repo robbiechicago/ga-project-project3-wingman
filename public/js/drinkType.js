@@ -1,10 +1,19 @@
 console.log('Hello Niall')
+var wingman = JSON.parse(localStorage.getItem('wingman'))
 $(document).ready(function() {
   getQuestions();
 
   $('body').on('click', '.responseLi', function(e) {
     var elem = $(this);
-    console.log($(this)[0].id)
+    var container = $('#responses')
+    var presontation = $('#presontation')
+    var drink = (elem[0].dataset.origional)
+    presontation.append('<h1>' + wingman.name + ' would like a ' + drink + '</h1>')
+    container.slideUp()
+    presontation.slideDown()
+
+
+
   })
   
 });
@@ -22,9 +31,7 @@ $(document).ready(function() {
       console.log(response)
 
       $.each(response.question, function(index, question) {
-        // appendCompliment(question);
         translatedResponse = translateText(question.questionText)
-
 
         var translatedText = '';
         translatedResponse.done(function(response) {
@@ -75,7 +82,7 @@ function appendCompliment(question) {
 
 function appendResponses(question){
   $.each(question.responses, function(index, response){
-
+        var origionalText = question.responses[index].responseText
         translatedResponse = translateText(question.responses[index].responseText)
 
         var translatedText = '';
@@ -83,15 +90,15 @@ function appendResponses(question){
 
         translatedText = response.text[0]
         console.log(translatedText)
-        appendResponsesTranslated(translatedText, index)
+        appendResponsesTranslated(translatedText, index, origionalText)
       })
 
   })
 
 }
-function appendResponsesTranslated(text, index){
+function appendResponsesTranslated(text, index, origionalText){
 
-    $('ul#responses').append('<button class="responseLi drink-circle" data-drinkType="' + text + '"id=' + index + '>' + text + '</button>');
+    $('ul#responses').append('<button class="responseLi drink-circle" data-origional="' + origionalText +'" data-drinkType="' + text + '"id=' + index + '>' + text + '</button>');
 }
 
 function setLocalDataEvent(){
