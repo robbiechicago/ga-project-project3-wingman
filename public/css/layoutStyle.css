@@ -258,3 +258,9 @@ h2 {
   background-size: 35%;
   opacity: 0.5;
 }
+
+ul {
+  padding: 0;
+  border: 0;
+  font-size: 120%;
+}
