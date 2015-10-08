@@ -1,10 +1,14 @@
 console.log('Hello Niall')
 $(document).ready(function() {
-  
   getQuestions();
 
-});
+  $('body').on('click', '.responseLi', function(e) {
+    var elem = $(this);
+    console.log($(this)[0].id)
+  })
   
+});
+  var wingman = JSON.parse(localStorage.getItem('wingman'))
   var endpoint = '/questions/type/drinkType'
 
   function getQuestions() {
@@ -86,7 +90,15 @@ function appendResponses(question){
 
 }
 function appendResponsesTranslated(text, index){
-    $('ul#responses').append('<li class="responseLi" id=' + index + '>' + text + '</li>');
+    $('ul#responses').append('<li class="responseLi" data-drinkType="' + text + '"id=' + index + '>' + text + '</li>');
+}
+
+function setLocalDataEvent(){
+
+  eventText = 'You bought' + wingman.name + 'a drink'
+  wingman.activity.push(eventText) 
+  localStorage.setItem('wingman', JSON.stringify(wingman))
+
 }
 
 
