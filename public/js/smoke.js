@@ -85,7 +85,7 @@ function appendResponses(question){
 
 }
 function appendResponsesTranslated(text, index){
-    $('ul#responses').append('<li class="responseLi" id=' + index + '>' + text + '</li>');
+    $('ul#responses').append('<button class="responseLi ans-circle" id=' + index + '>' + text + '</button>');
 }
 
 

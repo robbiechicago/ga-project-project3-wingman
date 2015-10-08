@@ -110,5 +110,3 @@ function appendResponsesTranslated(text, index){
 
 
 
-
-
