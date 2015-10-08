@@ -19,7 +19,7 @@ $(document).ready(function() {
   })
 
 });
-  
+
   var endpoint = '/questions/type/drink'
 
   function getQuestions() {
@@ -102,8 +102,6 @@ function appendResponses(question){
 function appendResponsesTranslated(text, index){
     $('ul#responses').append('<button class="responseLi ans-circle" id=' + index + '>' + text + '</button>');
 }
-
-
 
 
 
