@@ -91,7 +91,7 @@ function appendResponses(question){
 }
 function appendResponsesTranslated(text, index){
 
-    $('ul#responses').append('<li class="responseLi" data-drinkType="' + text + '"id=' + index + '>' + text + '</li>');
+    $('ul#responses').append('<button class="responseLi drink-circle" data-drinkType="' + text + '"id=' + index + '>' + text + '</button>');
 }
 
 function setLocalDataEvent(){
