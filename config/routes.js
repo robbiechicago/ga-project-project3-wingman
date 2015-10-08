@@ -59,7 +59,7 @@ router.route('/getName')
   .get(staticController.getName)
 
 router.route('/home')
-  .get(authenticatedUser, staticController.renderHome)
+  .get(staticController.renderHome)
 
 router.route('/compliment')
   .get(staticController.renderCompliment)
