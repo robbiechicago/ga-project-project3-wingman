@@ -52,6 +52,9 @@ router.route('/')
 router.route('/go')
   .get(authenticatedUser, staticController.go)
 
+router.route('/lang')
+  .get(staticController.lang)
+
 router.route('/home')
   .get(authenticatedUser, staticController.renderHome)
 
