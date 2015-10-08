@@ -98,6 +98,7 @@ body {
   background: #007BA7;
   color: white;
   font-family: 'Varela Round', sans-serif;
+  text-transform: uppercase;
 }
 
 .signup-link {
