@@ -1,6 +1,6 @@
 $(document).ready(function() {
   console.log('Hello Niall')
-
+  resetLocalVar()
 })
 
 $('.icon').on('click', function(e){
