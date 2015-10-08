@@ -1,8 +1,8 @@
 console.log('Hello')
 var mainWindow = $('#compCont')
 var presontationWindow = $('#presontation')
-
-
+var complimentText
+var translatedText
 $(document).ready(function() {
 
   getQuestions();
@@ -24,38 +24,54 @@ $(document).ready(function() {
 function setEventListeners(){
   $("#inputSubmit").on('click', function(event){
     event.preventDefault()
-    var complimentText = $("#inputText").val()
+     complimentText = $("#inputText").val()
     var complimentType = $(".current").html()
     console.log(complimentType+complimentText) 
 
-    presontationWindow.append('<h1>'+ complimentType+ ' ' +complimentText +'</h1>')
+    presontationWindow.prepend('<h1 id="response">'+ complimentType+ ' ' +complimentText +'</h1>')
     mainWindow.slideUp()
+
     presontationWindow.slideDown('slow')
+  })
+
+  $('#translate').on('click', function(){
+
+    var complimentType = $(".current").html()
+    translatedResponse = translateText(complimentType, complimentText)
+
+
+    var translatedText = '';
+    translatedResponse.done(function(response) {
+
+      translatedText = response.text[0]
+      console.log(translatedText)
+      appendTranlaslation(translatedText)
+    })
+
+
 
   })
+}
+
+
+function appendTranlaslation(text){
+
+  presontationWindow.html('')
+  presontationWindow.append('<h1 id="response">'+ text +'</h1>')
+
 }
   
 function translateText(value1, value2){
 
   var temp = (value1 + ' ' + value2).split(' ')
+  console.log(temp)
   var newText = temp.join('+')
-  console.log(newText)
-  var translatedText
-  // var translatedText = $.get('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20151005T100356Z.3c97f274db97659e.4f6d68f66d7e6855016e1fa832b97841210a0e43&lang=HE&text=' + newText)
+  console.log('new Text = '+newText)
 
-  // console.log(translatedText)
-  // return translatedText
 
-    translatedText = $.ajax({
-    url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20151005T100356Z.3c97f274db97659e.4f6d68f66d7e6855016e1fa832b97841210a0e43&lang=HE&text=' + newText,
-    dataType: "json",
-    method: "get"
-    })
-    .done(function(response) {
-      return response
-      console.log(response)
-    })
-
+  return $.ajax({
+    url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20151005T100356Z.3c97f274db97659e.4f6d68f66d7e6855016e1fa832b97841210a0e43&lang=ES&text=' + newText
+    });
 }
 
 
@@ -71,6 +87,7 @@ function getQuestions() {
   .done(function(response) {
     $.each(response.question, function(index, compliment) {
       appendCompliment(index, compliment);
+
     })
 
   })
@@ -89,6 +106,7 @@ function showTextBox() {
 function appendCompliment(index, compliment) {
   console.log('append compliment section')
   $('ul#questions').append('<li class="slideup complimentLi" data-index="' + index + '">' + compliment.questionText + '</li>');
+
 };
 
 
