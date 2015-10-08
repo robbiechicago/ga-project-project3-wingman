@@ -54,9 +54,14 @@ function go(req, res) {
   res.render('go.ejs');
 }
 
-//RENDER GO PAGE 
+//RENDER LANG PAGE 
 function lang(req, res) {
   res.render('lang.ejs');
+}
+
+//RENDER LANG PAGE 
+function getName(req, res) {
+  res.render('getName.ejs');
 }
 
 //RENDER MENU PAGE 
@@ -104,6 +109,7 @@ module.exports = {
   authSuccess: authSuccess,
   getLogout: getLogout,
   go: go,
+  getName: getName,
   lang: lang,
   renderHome: renderHome,
   renderCompliment: renderCompliment,
