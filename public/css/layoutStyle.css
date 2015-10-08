@@ -302,6 +302,7 @@ h2 {
   background-image: url("/images/runaway.png");
   background-size: 35%;
   opacity: 0.5;
+  margin-bottom: -10%
 }
 
 ul {
