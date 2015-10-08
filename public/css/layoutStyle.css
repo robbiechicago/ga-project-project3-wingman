@@ -167,20 +167,20 @@ h2 {
   width: 200px;
   height: 200px;
   display: absolute;
-  color: white;
+  color: #007BA7;
   font-size: 700%;
   vertical-align: middle;
   text-align: center;
   line-height: 190%;
   margin-bottom: 5%;
-  border: 10px solid white;
+  border: 7px solid white;
   -webkit-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   
-  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #00ff00 0%, #00b200 100%, #006600 95%);
-  background-image: -webkit-radial-gradient(45px 45px, circle cover, #00ff00, #00b200);
-  background-image: radial-gradient(45px 45px 45deg, circle cover, #00ff00 0%, #00b200 100%, #006600 95%);
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, white 0%, #b0e0e6 100%, #bbedff 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, white, #b0e0e6);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, white 0%, #b0e0e6 100%, #bbedff 95%);
 }
 
  .stop-circle {
@@ -189,7 +189,7 @@ h2 {
   width: 150px;
   height: 150px;
   display: absolute;
-  color: white;
+  color: #007BA7;
   font-size: 250%;
   vertical-align: middle;
   text-align: center;
@@ -200,9 +200,9 @@ h2 {
   -moz-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   
-  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ff6666 0%, #e50000 100%, #7f0000 95%);
-  background-image: -webkit-radial-gradient(45px 45px, circle cover, #e50000, #7f0000);
-  background-image: radial-gradient(45px 45px 45deg, circle cover, #ff6666 0%, #e50000 100%, #7f0000 95%);
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, white 0%, #b0e0e6 100%, #bbedff 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, white, #b0e0e6);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, white 0%, #b0e0e6 100%, #bbedff 95%);
 }
 
 .icon-row {
