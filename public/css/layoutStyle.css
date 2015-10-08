@@ -164,11 +164,11 @@ h2 {
  .go-circle {
   margin: 0 auto;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   display: absolute;
   color: #007BA7;
-  font-size: 700%;
+  font-size: 550%;
   vertical-align: middle;
   text-align: center;
   line-height: 190%;
@@ -196,6 +196,28 @@ h2 {
   line-height: 400%;
   margin-bottom: 5%;
   border: 5px solid white;
+  -webkit-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
+  box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
+  
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, white 0%, #b0e0e6 100%, #bbedff 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, white, #b0e0e6);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, white 0%, #b0e0e6 100%, #bbedff 95%);
+}
+
+ .ans-circle {
+  margin: 10px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: absolute;
+  color: #007BA7;
+  font-size: 120%;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 100%;
+  margin-bottom: 5%;
+  border: 7px solid white;
   -webkit-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
   box-shadow: 7px 7px 3px 0px rgba(0,0,0,0.3);
@@ -263,4 +285,15 @@ ul {
   padding: 0;
   border: 0;
   font-size: 120%;
+}
+
+#formContainer {
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+}
+
+#drinkCont {
+  text-align: center;
 }
