@@ -19,6 +19,12 @@
   background-repeat: no-repeat;
 }
 
+#dontTans {
+
+  display: block;
+  margin: 0 auto;
+}
+
 #france {
   background-image: url("/images/france.png");
 }
