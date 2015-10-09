@@ -53,27 +53,28 @@ router.route('/go')
   .get(authenticatedUser, staticController.go)
 
 router.route('/lang')
-  .get(staticController.lang)
+  .get(authenticatedUser, staticController.lang)
 
 router.route('/getName')
-  .get(staticController.getName)
+  .get(authenticatedUser, staticController.getName)
 
 router.route('/home')
-  .get(staticController.renderHome)
+  .get(authenticatedUser, staticController.renderHome)
 
 router.route('/compliment')
-  .get(staticController.renderCompliment)
+  .get(authenticatedUser, staticController.renderCompliment)
 
 router.route('/smoke')
-  .get(staticController.renderSmoke)
+  .get(authenticatedUser, staticController.renderSmoke)
 
 router.route('/drink')
-  .get(staticController.renderDrink)
+  .get(authenticatedUser, staticController.renderDrink)
 
 router.route('/drinkType')
-  .get(staticController.renderDrinkType)
+  .get(authenticatedUser, staticController.renderDrinkType)
+
 router.route('/selfie')
-  .get(staticController.renderCamera)
+  .get(authenticatedUser, staticController.renderCamera)
 
 
  //AUTHENTICATION ROUTES 

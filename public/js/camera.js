@@ -4,8 +4,8 @@ $(document).ready(function() {
   Webcam.set({
       width: 400,
       height: 300,
-      dest_width: 640,
-      dest_height: 480,
+      dest_width: 400,
+      dest_height: 300,
       image_format: 'jpeg',
       jpeg_quality: 90,
       force_flash: false,
