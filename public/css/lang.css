@@ -1,0 +1,68 @@
+.icon {
+  width: 30%;
+  height: 90%;
+  position: relative;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.8;
+}
+
+.icon-row {
+  margin: 0 auto;
+  display: block;
+  height: 100px;
+  width: 100%;
+  padding: 2%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#france {
+  background-image: url("/images/france.png");
+}
+
+#spain {
+  background-image: url("/images/spain.png");
+}
+
+#russia {
+  background-image: url("/images/russia.png");
+}
+
+#germany {
+  background-image: url("/images/germany.png");
+}
+
+#poland {
+  background-image: url("/images/poland.png");
+}
+
+#italy {
+  background-image: url("/images/italy.png");
+}
+
+#israel {
+  background-image: url("/images/israel.png");
+}
+
+#uae {
+  background-image: url("/images/uae.png");
+}
+
+#greece {
+  background-image: url("/images/greece.png");
+}
+
+#portugal {
+  background-image: url("/images/portugal.png");
+}
+
+#netherlands {
+  background-image: url("/images/netherlands.png");
+}
+
+#hungary {
+  background-image: url("/images/hungary.png");
+}

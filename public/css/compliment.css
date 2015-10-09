@@ -1,0 +1,74 @@
+.hidden {
+  display: none;
+  width: 20%;
+}
+
+#inputText {
+  display: block;
+  margin: 0 auto;
+}
+
+.inputCompliment {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+#inputSubmit {
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #eaf7f8;
+  padding: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 auto;
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: none;
+  display: inline; /* needed for anchors */
+    box-shadow: none;}
+
+#presontation{
+  display: none;
+}
+
+#dance {
+  background-image: url("/images/dance.png");
+  background-size: 60%;
+}
+
+#eyes {
+  background-image: url("/images/eye.png");
+  background-size: 80%;
+}
+
+#clothes {
+  background-image: url("/images/clothes.png");
+  background-size: 60%;
+}
+
+#perfect {
+  background-image: url("/images/perfect.png");
+  background-size: 35%;
+}
+
+.complimentButton {
+  height: 100%;
+  width: 95%;
+  display: block;
+  margin-bottom: 4%;
+  font-size: 100%;
+}
+
+#translate {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.complimentForm {
+  margin: 0 auto;
+  height: 30%;
+  width: 100%;
+  display: block;
+}

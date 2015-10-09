@@ -10,10 +10,6 @@ var staticController = require('../controllers/staticController');
 
 function authenticatedUser(req, res, next) {
   if (req.isAuthenticated()) return next();
-  // console.log(req.isAuthenticated())
-  // if (req.isAuthenticated()) {
-  //   console.log('boom');  
-  // };
   res.redirect('/');
 }
 
@@ -27,6 +23,9 @@ router.route('/questions/:id')
   .get(questionsController.getQuestion)
   .put(questionsController.updateQuestion)
   .delete(questionsController.removeQuestion);
+
+router.route('/questions/type/:questionName')
+  .get(questionsController.getQuestionByType)
 
   //ADD RESPONSE TO QUESTION
 router.route('/questions/:id/responses/:response_id')
@@ -50,6 +49,36 @@ router.route('/responses/:id')
 router.route('/')
   .get(staticController.login)
 
+router.route('/go')
+  .get(authenticatedUser, staticController.go)
+
+router.route('/lang')
+  .get(authenticatedUser, staticController.lang)
+
+router.route('/getName')
+  .get(authenticatedUser, staticController.getName)
+
+router.route('/home')
+  .get(authenticatedUser, staticController.renderHome)
+
+router.route('/compliment')
+  .get(authenticatedUser, staticController.renderCompliment)
+
+router.route('/smoke')
+  .get(authenticatedUser, staticController.renderSmoke)
+
+router.route('/drink')
+  .get(authenticatedUser, staticController.renderDrink)
+
+router.route('/drinkType')
+  .get(authenticatedUser, staticController.renderDrinkType)
+
+router.route('/selfie')
+  .get(authenticatedUser, staticController.renderCamera)
+
+
+ //AUTHENTICATION ROUTES 
+
 router.route('/login')
   .post(staticController.postLogin)
 
@@ -65,6 +94,11 @@ router.route('/register')
 
 router.route('/authsuccess')
   .get(authenticatedUser, staticController.authSuccess)
+
+
+//ACTIVITY ROUTE
+router.route('/activity/post')
+  .post(staticController.postActivity)
 
 
 

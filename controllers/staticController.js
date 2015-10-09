@@ -1,4 +1,7 @@
 var passport = require("passport")
+var mongoose = require('mongoose')
+var User         = mongoose.model('User');
+
 
 // INDEX
 function login(req, res) {
@@ -15,18 +18,21 @@ function registerUserPage(req, res) {
     res.render('registerUser.ejs');
 }
 
+
+//REGISTER USER
 function registerUser(req, res) {
   console.log('Hello!')
   passport.authenticate('local-signup', {
-    successRedirect : '/authsuccess', // redirect to the secure profile section
+    successRedirect : '/go', // redirect to the secure profile section
     failureRedirect : '/register', // redirect back to the signup page if there is an error
     failureFlash : true
   })(req, res);
 }
 
+// POST LOGIN
 function postLogin(req, res) {
   passport.authenticate('local-login', {
-    successRedirect : "/authsuccess",
+    successRedirect : "/go",
     failureRedirect : "/",
     failureFlash    : true
   })(req, res);
@@ -34,7 +40,7 @@ function postLogin(req, res) {
 
 //AUTH SUCCESS
 function authSuccess(req, res) {
-    res.render('app.ejs');
+    res.render('go.ejs');
 }
 
 // GET /logout
@@ -43,6 +49,61 @@ function getLogout(req, res) {
   res.redirect("/");
 }
 
+//RENDER GO PAGE 
+function go(req, res) {
+  res.render('go.ejs');
+}
+
+//RENDER LANG PAGE 
+function lang(req, res) {
+  res.render('lang.ejs');
+}
+
+//RENDER LANG PAGE 
+function getName(req, res) {
+  res.render('getName.ejs');
+}
+
+//RENDER MENU PAGE 
+function renderHome(req, res) {
+  res.render('home.ejs');
+}
+
+//RENDER COMPLIMENT PAGE 
+function renderCompliment(req, res) {
+  res.render('compliment.ejs');
+}
+
+//RENDER SMOKE PAGE 
+function renderSmoke(req, res) {
+  res.render('smoke.ejs');
+}
+//RENDER DRINK PAGE 
+function renderDrink(req, res) {
+  res.render('drink.ejs');
+}
+//RENDER DRINKTYPE PAGE 
+function renderDrinkType(req, res) {
+  res.render('drinkType.ejs');
+}
+
+//RENDER CAMERA PAGE 
+function renderCamera(req, res) {
+  res.render('camera.ejs');
+}
+
+
+//POST AVTICITY 
+function postActivity(req, res){
+  console.log(req.user)
+  User.findById({username: req.local.username}, function(error, user) {
+  user.activity.push(req.body)
+  if(error) res.json({message: 'Could not find response b/c:' + error});
+  
+  });
+
+  console.log(req.body)
+}
 
 module.exports = {
   login: login,
@@ -51,5 +112,15 @@ module.exports = {
   postLogin: postLogin,
   authFail: authFail,
   authSuccess: authSuccess,
-  getLogout: getLogout
+  getLogout: getLogout,
+  go: go,
+  getName: getName,
+  lang: lang,
+  renderHome: renderHome,
+  renderCamera: renderCamera,
+  renderCompliment: renderCompliment,
+  renderSmoke: renderSmoke,
+  renderDrink: renderDrink,
+  renderDrinkType: renderDrinkType,
+  postActivity: postActivity
 }
