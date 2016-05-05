@@ -8,6 +8,12 @@ $('.icon').on('click', function(e){
   location.href = "/getName";
 })
 
+$('#dontTans').on('click', function(e){
+  setLang('EN')
+  location.href = "/getName";
+  console.log('clicked')
+})
+
 //retrive local data, assign it to var
 var wingman = JSON.parse(localStorage.getItem('wingman'))
 
