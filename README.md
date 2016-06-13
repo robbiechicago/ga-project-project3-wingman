@@ -26,29 +26,29 @@ Enter WINGMAN!
 
 Like a panther (with hands.  And a phone.  And pockets) you pull out your smartphone and spool up the WINGMAN app.  In an instant you've signed in, and, sexily approaching your prey, you click the GO button:
 
-![Go Screen](/Users/roho1/ga_wdi/homework/week9/project_3/wingman/go.jpg)
+![Go Screen](go.jpg)
 
 You attract his or her attention with a gentle tap on their shoulder.  Showing them the screen, you ask them their name:
 
-![Enter Your Name](/Users/roho1/ga_wdi/homework/week9/project_3/wingman/name.jpg)
+![Enter Your Name](name.jpg)
 
 Chris enters his/her name.  He or she smiles.  You could be in here!
 
 WINGMAN then presents you with a list of interactions:  
 
-![Options](/Users/roho1/ga_wdi/homework/week9/project_3/wingman/home.jpg)
+![Options](/home.jpg)
 
 You'd like to buy Chris a drink, so you click the drink icon.  You show Chris your phone again:
 
-![Would you like a drink?](/Users/roho1/ga_wdi/homework/week9/project_3/wingman/drink1.jpg)
+![Would you like a drink?](/drink1.jpg)
 
 Chris is thirsty and borderline alcoholic.  He/she immediately clicks "Yes!".  This brings up a list of drinks:
 
-![Drink choice](/Users/roho1/ga_wdi/homework/week9/project_3/wingman/drink2.jpg)
+![Drink choice](/drink2.jpg)
 
 Chris is mad for gin, so taps the appropriate button.  Turning the screen back to yourself, you see the result:
 
-![Gin please!](/Users/roho1/ga_wdi/homework/week9/project_3/wingman/drink3.jpg)
+![Gin please!](/drink3.jpg)
 
 Yes, thanks to WINGMAN you're in!  Get yourself to the bar immediately, and make it a double!
 
