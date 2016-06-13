@@ -167,21 +167,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // serve static assets (js, css, image) from the public foldr
 app.use(express.static(__dirname + '/public'))
 
-// app.get('/', function(req, res){
-//   res.render('index')
-// })
 
-// app.get('/login', function(req, res){
-//   res.render('login')
-// })
-
-//require routes
 var routes = require('./config/routes');
 app.use(routes);
 
-// app.get('/secretroom', function(req, res){
-//   res.render('secretroom')
-// })
+
 
 //start server and listen on defined port 
 server.listen(port, function(){
